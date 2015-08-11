@@ -170,22 +170,7 @@ ${ ui.includeFragment("uicommons", "validationMessages")}
                             <input type="hidden" name="preferred" value="true"/>
                         </fieldset>
 
-                        <fieldset id="demographics-gender">
-                            <legend id="genderLabel">${ ui.message("emr.gender") }</legend>
-                            <h3>${ui.message("registrationapp.patient.gender.question")}</h3>
-                            ${ ui.includeFragment("uicommons", "field/dropDown", [
-                                    id: "gender",
-                                    formFieldName: "gender",
-                                    options: genderOptions,
-                                    classes: ["required"],
-                                    initialValue: patient.gender,
-                                    hideEmptyLabel: true,
-                                    expanded: true
-                            ])}
-                            <!-- we "hide" the unknown flag here since gender is the only field not hidden for an unknown patient -->
-                            <input id="demographics-unknown" type="hidden" name="unknown" value="false"/>
-                        </fieldset>
-
+               
                         <fieldset id="demographics-birthdate" class="multiple-input-date date-required no-future-date">
                             <legend id="birthdateLabel">${ui.message("registrationapp.patient.birthdate.label")}</legend>
                             <h3>${ui.message("registrationapp.patient.birthdate.question")}</h3>
